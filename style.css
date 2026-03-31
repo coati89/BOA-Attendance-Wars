@@ -1,0 +1,199 @@
+:root {
+  --boa-navy: #002d72;
+  --boa-gold: #ffd700;
+  --boa-silver: #c0c0c0;
+  --boa-bronze: #cd7f32;
+  --bg-dark: #0a111a;
+  --card-bg: #152233;
+}
+
+body {
+  font-family: "Arial Black", sans-serif;
+  background-color: var(--bg-dark);
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  background-color: var(--boa-navy);
+  padding: 20px;
+  border-bottom: 5px solid var(--boa-gold);
+}
+
+.podium-area {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.podium-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 350px;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+.podium-names-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  max-height: 120px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.podium-base {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  transition: height 0.5s ease;
+  background: #222;
+}
+
+.rank {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.first .podium-base {
+  height: 180px;
+  background: var(--boa-gold);
+  box-shadow: 0 0 30px var(--boa-gold);
+}
+
+.first {
+  color: var(--boa-gold);
+}
+
+.second .podium-base {
+  height: 120px;
+  background: var(--boa-silver);
+}
+
+.second {
+  color: var(--boa-silver);
+}
+
+.third .podium-base {
+  height: 80px;
+  background: var(--boa-bronze);
+}
+
+.third {
+  color: var(--boa-bronze);
+}
+
+.main-display {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+}
+
+.jar-viewer {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  border: 2px solid var(--boa-navy);
+}
+
+.glass-jar {
+  width: 220px;
+  height: 480px;
+  border: 10px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 90px 90px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.liquid-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to top, #0044cc, #00ccff);
+  transition: height 1.2s;
+}
+
+.goal-line {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  border-top: 3px dashed var(--boa-gold);
+  color: var(--boa-gold);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.team-card {
+  background: #1f3147;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 10px solid var(--t-color);
+  position: relative;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mvp-badge {
+  background: var(--boa-gold);
+  color: black;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: none;
+  animation: pulse 1.5s infinite;
+  margin-left: 5px;
+}
+
+.is-mvp .mvp-badge {
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+select {
+  background: #0a111a;
+  color: white;
+  border: 1px solid var(--boa-navy);
+  padding: 5px;
+  border-radius: 4px;
+}
